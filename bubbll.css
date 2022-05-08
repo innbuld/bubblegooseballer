@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300.400,600,700,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 16px;
+}
+
+/* I let the nav to be fixed up there
+and gave it zindex to come on top of the main section's contents */
+.nav {
+    position: fixed;
+    top: 30px;
+    left: 15px;
+    z-index: 2;
+    height: 50px;
+    width: 50%;
+    max-width: max-content;
+    background: inherit;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-left: 5px solid #ff2562;
+    padding-left: 10px;
+
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 0s;
+    opacity: 0;
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 30px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav li a:hover {
+    color: #ff2562;
+}
+
+/* Menu Icon hidden by default coz of Desktop View*/
+.menuicon {
+    display: none;
+    z-index: 3;
+    filter: invert(1);
+    top: 8px;
+}
+
+/* Here, I let the main section container
+take the full width and height by default 
+(you've done it, i only added some stuffs) 
+*/
+section {
+    width: 100vw;
+    min-height: 100vh;
+    max-height: max-content;
+    background: rgb(40, 126, 154);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* So the contents takes 50% of the width 
+and the image will take the other 50%(simple maths lol)*/
+section .content {
+    width: 50%;
+    padding: 40px;
+
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+section .content h1 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 800;
+}
+
+section .content p {
+    color: white;
+    font-size: 1.2em;
+}
+
+/* This for the 
+BubbleGoose Website Button 
+in the Content Section.
+I added .more class */
+section .content .more {
+    padding: 15px;
+    margin-top: 3rem;
+    background: #ff2562;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+/* The Social Media links
+I took them from where put them to the 
+Content Section*/
+.content .sci {
+    display: flex;
+    margin-top: 30px;
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 200;
+    color:black;
+    
+}
+
+.sci li a:hover {
+    color: #ff2562;
+}
+
+
+
+/* The Image takes 50% of the width here too */
+section .image {
+    width: 50%;
+}
+
+section .image img {
+    width: 100%;
+    max-width: 30rem;
+    animation: fade-in 0.5s ease-in forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+/* Your Animations
+(Untouched ) */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes left-in {
+    0% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+
+/* Media Queries */
+@media screen and (max-width:600px) {
+    /* Don't forget in the main section for desktop view
+    The flex-direction by default is set to row, so I changed it go Column in Mobile View */
+    section {
+        padding-top: 8rem;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    
+    /* I let the 2 sections takes 100% width and Height*/
+    section .content {
+        padding: 25px;
+        width: 100vw;
+    }
+
+    section .image img {
+        padding: 10px;
+        border-radius: 20px;
+        height: auto;
+        width: 100vw;
+    }
+
+    .nav {
+        display: none;
+        top: 3rem;
+    }
+
+    .menuicon {
+        position: fixed;
+        right: 15px;
+        padding: 10px;
+        display: block;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+
+
+}

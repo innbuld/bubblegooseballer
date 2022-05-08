@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GooseBubbles</title>
+    <link rel="stylesheet" href="bubbll.css">
+</head>
+
+<body>
+    <ul class="nav" id="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="https://www.bubblegooseballers.xyz/#artwork">ArtWork</a></li>
+        <li><a href="https://www.bubblegooseballers.xyz/">About</a></li>
+        <li><a href="https://twitter.com/msbBozy">Everyday news</a></li>
+    </ul>
+
+    <span class="menuicon" id="toggle" onclick="menuToggle()">
+        <img id="icon" src="menu.png" alt="hamburger" height="30px" width="40px" />
+    </span>
+
+    <section>
+        <div class="content">
+            <h1>Bubble Goose</h1>
+            <p>Bubblegoose Ballers collection is here to inspire us to fly high, live our lives to the fullest and to express ourselves freely.To be a Bubblegoose Baller is to be someone that takes risk, bets on themselves and overcomes odds</p>
+            <br />
+            <br />
+            <a class="more" href="https://www.bubblegooseballers.xyz/">BubbleGoose Website</a>
+            <br />
+
+            <ul class="sci">
+                <li><a href="https://twitter.com/BubblegooseXYZ">Twitter</a></li>
+                
+            </ul>
+            <p style="font-size: 20px;">Made with Love By <b>Innbuld#4454</b>,<a href="https://twitter.com/innbuld">Innbuld</p>
+        </div>
+        <div class="image">
+            <img src="bble.jpg">
+        </div>
+    </section>
+
+    <script type="text/javascript">
+
+        function menuToggle() {
+            var nav = document.getElementById("nav");
+            nav.classList.toggle('nav-active')
+            
+            /* A function to toggle image src from StackOverflow
+            https://stackoverflow.com/questions/12225843/toggle-image-src-attribute-using-javascript
+            */
+            var icon = document.getElementById('icon').src;
+            if (icon.indexOf('menu.png') != -1) {
+                document.getElementById('icon').src = 'close.png';
+            }
+            else {
+                document.getElementById('icon').src = 'menu.png';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
